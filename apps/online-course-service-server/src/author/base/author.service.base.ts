@@ -19,6 +19,8 @@ import {
   Subscription as PrismaSubscription,
 } from "@prisma/client";
 
+import { AuthorCreateInput } from "./AuthorCreateInput";
+
 export class AuthorServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
 
@@ -75,5 +77,8 @@ export class AuthorServiceBase {
         where: { id: parentId },
       })
       .subscriptions(args);
+  }
+  async AuthorizeSubscriberOrAuthor(args: AuthorCreateInput): Promise<string> {
+    throw new Error("Not implemented");
   }
 }

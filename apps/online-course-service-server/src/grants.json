@@ -1,270 +1,810 @@
 [
   {
-    "role": "user",
+    "role": "admin",
     "resource": "Author",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Author",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Author",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Author",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Author",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Author",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Author",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Author",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Author",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Author",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Author",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Author",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Author",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Author",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Author",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscriber",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscriber",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscriber",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscriber",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscriber",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscriber",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscriber",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscriber",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscriber",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscriber",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscriber",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscriber",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscriber",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscriber",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscriber",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Page",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Page",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Page",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Page",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Page",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Page",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Page",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Page",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Page",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Page",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Page",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Page",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Page",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Page",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Page",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Course",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Course",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Course",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Course",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Course",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Course",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Course",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Course",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Course",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Course",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Course",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Course",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Course",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Course",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Course",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscription",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscription",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscription",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscription",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscription",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscription",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscription",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscription",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscription",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscription",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscription",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscription",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Subscription",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Subscription",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Subscription",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Role",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Role",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Role",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Role",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Role",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Role",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Role",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Role",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Role",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Role",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Role",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Role",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Role",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Role",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Role",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Admin",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Admin",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Admin",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Admin",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Admin",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Admin",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Admin",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Admin",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Admin",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Admin",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Admin",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Admin",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Admin",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Admin",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Admin",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Analytics",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Analytics",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Analytics",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Analytics",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Analytics",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Analytics",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Analytics",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Analytics",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Analytics",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Analytics",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "author",
+    "resource": "Analytics",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
+    "resource": "Analytics",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Analytics",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "author",
+    "resource": "Analytics",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "subscriber",
     "resource": "Analytics",
     "action": "read:any",
     "attributes": "*"

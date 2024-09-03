@@ -32,6 +32,7 @@ import { CourseFindManyArgs } from "../../course/base/CourseFindManyArgs";
 import { Course } from "../../course/base/Course";
 import { SubscriptionFindManyArgs } from "../../subscription/base/SubscriptionFindManyArgs";
 import { Subscription } from "../../subscription/base/Subscription";
+import { AuthorCreateInput } from "./AuthorCreateInput";
 import { AuthorService } from "../author.service";
 @common.UseGuards(GqlDefaultAuthGuard, gqlACGuard.GqlACGuard)
 @graphql.Resolver(() => Author)
@@ -202,5 +203,13 @@ export class AuthorResolverBase {
     }
 
     return results;
+  }
+
+  @graphql.Mutation(() => String)
+  async AuthorizeSubscriberOrAuthor(
+    @graphql.Args()
+    args: AuthorCreateInput
+  ): Promise<string> {
+    return this.service.AuthorizeSubscriberOrAuthor(args);
   }
 }

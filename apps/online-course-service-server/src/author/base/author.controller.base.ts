@@ -521,4 +521,21 @@ export class AuthorControllerBase {
       select: { id: true },
     });
   }
+
+  @common.Post("/authorize")
+  @swagger.ApiOkResponse({
+    type: String,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async AuthorizeSubscriberOrAuthor(
+    @common.Body()
+    body: AuthorCreateInput
+  ): Promise<string> {
+    return this.service.AuthorizeSubscriberOrAuthor(body);
+  }
 }
