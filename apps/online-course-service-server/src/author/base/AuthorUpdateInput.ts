@@ -11,18 +11,31 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { AnalyticsUpdateManyWithoutAuthorsInput } from "./AnalyticsUpdateManyWithoutAuthorsInput";
 import {
+  ValidateNested,
+  IsOptional,
   IsString,
   MaxLength,
-  IsOptional,
-  ValidateNested,
 } from "class-validator";
-import { CourseUpdateManyWithoutAuthorsInput } from "./CourseUpdateManyWithoutAuthorsInput";
 import { Type } from "class-transformer";
+import { CourseUpdateManyWithoutAuthorsInput } from "./CourseUpdateManyWithoutAuthorsInput";
 import { SubscriptionUpdateManyWithoutAuthorsInput } from "./SubscriptionUpdateManyWithoutAuthorsInput";
 
 @InputType()
 class AuthorUpdateInput {
+  @ApiProperty({
+    required: false,
+    type: () => AnalyticsUpdateManyWithoutAuthorsInput,
+  })
+  @ValidateNested()
+  @Type(() => AnalyticsUpdateManyWithoutAuthorsInput)
+  @IsOptional()
+  @Field(() => AnalyticsUpdateManyWithoutAuthorsInput, {
+    nullable: true,
+  })
+  analyticsItems?: AnalyticsUpdateManyWithoutAuthorsInput;
+
   @ApiProperty({
     required: false,
     type: String,
@@ -58,6 +71,18 @@ class AuthorUpdateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  subdomain?: string | null;
 
   @ApiProperty({
     required: false,

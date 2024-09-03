@@ -5,5 +5,6 @@ export type AuthorOrderByInput = {
   createdAt?: SortOrder;
   id?: SortOrder;
   name?: SortOrder;
+  subdomain?: SortOrder;
   updatedAt?: SortOrder;
 };

@@ -1,61 +1,61 @@
 [
   {
     "role": "user",
-    "resource": "Subscriber",
+    "resource": "Author",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Subscriber",
+    "resource": "Author",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Subscriber",
+    "resource": "Author",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Subscriber",
+    "resource": "Author",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Subscriber",
+    "resource": "Author",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Author",
+    "resource": "Subscriber",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Author",
+    "resource": "Subscriber",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Author",
+    "resource": "Subscriber",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Author",
+    "resource": "Subscriber",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Author",
+    "resource": "Subscriber",
     "action": "read:any",
     "attributes": "*"
   },
@@ -236,6 +236,36 @@
   {
     "role": "user",
     "resource": "Admin",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Analytics",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Analytics",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Analytics",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Analytics",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Analytics",
     "action": "read:any",
     "attributes": "*"
   }

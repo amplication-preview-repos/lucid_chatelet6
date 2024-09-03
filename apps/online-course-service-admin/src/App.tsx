@@ -5,14 +5,14 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
-import { SubscriberList } from "./subscriber/SubscriberList";
-import { SubscriberCreate } from "./subscriber/SubscriberCreate";
-import { SubscriberEdit } from "./subscriber/SubscriberEdit";
-import { SubscriberShow } from "./subscriber/SubscriberShow";
 import { AuthorList } from "./author/AuthorList";
 import { AuthorCreate } from "./author/AuthorCreate";
 import { AuthorEdit } from "./author/AuthorEdit";
 import { AuthorShow } from "./author/AuthorShow";
+import { SubscriberList } from "./subscriber/SubscriberList";
+import { SubscriberCreate } from "./subscriber/SubscriberCreate";
+import { SubscriberEdit } from "./subscriber/SubscriberEdit";
+import { SubscriberShow } from "./subscriber/SubscriberShow";
 import { PageList } from "./page/PageList";
 import { PageCreate } from "./page/PageCreate";
 import { PageEdit } from "./page/PageEdit";
@@ -37,6 +37,10 @@ import { AdminList } from "./admin/AdminList";
 import { AdminCreate } from "./admin/AdminCreate";
 import { AdminEdit } from "./admin/AdminEdit";
 import { AdminShow } from "./admin/AdminShow";
+import { AnalyticsList } from "./analytics/AnalyticsList";
+import { AnalyticsCreate } from "./analytics/AnalyticsCreate";
+import { AnalyticsEdit } from "./analytics/AnalyticsEdit";
+import { AnalyticsShow } from "./analytics/AnalyticsShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -64,18 +68,18 @@ const App = (): React.ReactElement => {
         loginPage={Login}
       >
         <Resource
-          name="Subscriber"
-          list={SubscriberList}
-          edit={SubscriberEdit}
-          create={SubscriberCreate}
-          show={SubscriberShow}
-        />
-        <Resource
           name="Author"
           list={AuthorList}
           edit={AuthorEdit}
           create={AuthorCreate}
           show={AuthorShow}
+        />
+        <Resource
+          name="Subscriber"
+          list={SubscriberList}
+          edit={SubscriberEdit}
+          create={SubscriberCreate}
+          show={SubscriberShow}
         />
         <Resource
           name="Page"
@@ -118,6 +122,13 @@ const App = (): React.ReactElement => {
           edit={AdminEdit}
           create={AdminCreate}
           show={AdminShow}
+        />
+        <Resource
+          name="Analytics"
+          list={AnalyticsList}
+          edit={AnalyticsEdit}
+          create={AnalyticsCreate}
+          show={AnalyticsShow}
         />
       </Admin>
     </div>

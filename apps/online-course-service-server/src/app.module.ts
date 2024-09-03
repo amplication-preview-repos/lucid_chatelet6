@@ -1,12 +1,13 @@
 import { Module } from "@nestjs/common";
-import { SubscriberModule } from "./subscriber/subscriber.module";
 import { AuthorModule } from "./author/author.module";
+import { SubscriberModule } from "./subscriber/subscriber.module";
 import { PageModule } from "./page/page.module";
 import { CourseModule } from "./course/course.module";
 import { SubscriptionModule } from "./subscription/subscription.module";
 import { UserModule } from "./user/user.module";
 import { RoleModule } from "./role/role.module";
 import { AdminModule } from "./admin/admin.module";
+import { AnalyticsModule } from "./analytics/analytics.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -26,14 +27,15 @@ import { AuthModule } from "./auth/auth.module";
     ACLModule,
     AuthModule,
     KafkaModule,
-    SubscriberModule,
     AuthorModule,
+    SubscriberModule,
     PageModule,
     CourseModule,
     SubscriptionModule,
     UserModule,
     RoleModule,
     AdminModule,
+    AnalyticsModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,

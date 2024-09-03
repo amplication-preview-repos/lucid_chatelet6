@@ -11,18 +11,31 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { AnalyticsCreateNestedManyWithoutAuthorsInput } from "./AnalyticsCreateNestedManyWithoutAuthorsInput";
 import {
+  ValidateNested,
+  IsOptional,
   IsString,
   MaxLength,
-  IsOptional,
-  ValidateNested,
 } from "class-validator";
-import { CourseCreateNestedManyWithoutAuthorsInput } from "./CourseCreateNestedManyWithoutAuthorsInput";
 import { Type } from "class-transformer";
+import { CourseCreateNestedManyWithoutAuthorsInput } from "./CourseCreateNestedManyWithoutAuthorsInput";
 import { SubscriptionCreateNestedManyWithoutAuthorsInput } from "./SubscriptionCreateNestedManyWithoutAuthorsInput";
 
 @InputType()
 class AuthorCreateInput {
+  @ApiProperty({
+    required: false,
+    type: () => AnalyticsCreateNestedManyWithoutAuthorsInput,
+  })
+  @ValidateNested()
+  @Type(() => AnalyticsCreateNestedManyWithoutAuthorsInput)
+  @IsOptional()
+  @Field(() => AnalyticsCreateNestedManyWithoutAuthorsInput, {
+    nullable: true,
+  })
+  analyticsItems?: AnalyticsCreateNestedManyWithoutAuthorsInput;
+
   @ApiProperty({
     required: false,
     type: String,
@@ -58,6 +71,18 @@ class AuthorCreateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  subdomain?: string | null;
 
   @ApiProperty({
     required: false,

@@ -11,19 +11,29 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { Analytics } from "../../analytics/base/Analytics";
 import {
+  ValidateNested,
+  IsOptional,
   IsString,
   MaxLength,
-  IsOptional,
-  ValidateNested,
   IsDate,
 } from "class-validator";
-import { Course } from "../../course/base/Course";
 import { Type } from "class-transformer";
+import { Course } from "../../course/base/Course";
 import { Subscription } from "../../subscription/base/Subscription";
 
 @ObjectType()
 class Author {
+  @ApiProperty({
+    required: false,
+    type: () => [Analytics],
+  })
+  @ValidateNested()
+  @Type(() => Analytics)
+  @IsOptional()
+  analyticsItems?: Array<Analytics>;
+
   @ApiProperty({
     required: false,
     type: String,
@@ -72,6 +82,18 @@ class Author {
     nullable: true,
   })
   name!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @MaxLength(1000)
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  subdomain!: string | null;
 
   @ApiProperty({
     required: false,

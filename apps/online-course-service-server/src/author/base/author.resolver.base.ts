@@ -26,6 +26,8 @@ import { AuthorFindUniqueArgs } from "./AuthorFindUniqueArgs";
 import { CreateAuthorArgs } from "./CreateAuthorArgs";
 import { UpdateAuthorArgs } from "./UpdateAuthorArgs";
 import { DeleteAuthorArgs } from "./DeleteAuthorArgs";
+import { AnalyticsFindManyArgs } from "../../analytics/base/AnalyticsFindManyArgs";
+import { Analytics } from "../../analytics/base/Analytics";
 import { CourseFindManyArgs } from "../../course/base/CourseFindManyArgs";
 import { Course } from "../../course/base/Course";
 import { SubscriptionFindManyArgs } from "../../subscription/base/SubscriptionFindManyArgs";
@@ -140,6 +142,26 @@ export class AuthorResolverBase {
       }
       throw error;
     }
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => [Analytics], { name: "analyticsItems" })
+  @nestAccessControl.UseRoles({
+    resource: "Analytics",
+    action: "read",
+    possession: "any",
+  })
+  async findAnalyticsItems(
+    @graphql.Parent() parent: Author,
+    @graphql.Args() args: AnalyticsFindManyArgs
+  ): Promise<Analytics[]> {
+    const results = await this.service.findAnalyticsItems(parent.id, args);
+
+    if (!results) {
+      return [];
+    }
+
+    return results;
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)

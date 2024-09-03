@@ -7,6 +7,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Author {
+  analyticsItems Analytics[]
+  bio            String?
+  courses        Course[]
+  createdAt      DateTime       @default(now())
+  id             String         @id @default(cuid())
+  name           String?
+  subdomain      String?
+  subscriptions  Subscription[]
+  updatedAt      DateTime       @updatedAt
+}
+
 model Subscriber {
   createdAt        DateTime       @default(now())
   email            String?
@@ -14,16 +26,6 @@ model Subscriber {
   subscriptionDate DateTime?
   subscriptions    Subscription[]
   updatedAt        DateTime       @updatedAt
-}
-
-model Author {
-  bio           String?
-  courses       Course[]
-  createdAt     DateTime       @default(now())
-  id            String         @id @default(cuid())
-  name          String?
-  subscriptions Subscription[]
-  updatedAt     DateTime       @updatedAt
 }
 
 model Page {
@@ -85,6 +87,18 @@ model Admin {
   roleId    String?
   updatedAt DateTime @updatedAt
   username  String?
+}
+
+model Analytics {
+  author           Author?   @relation(fields: [authorId], references: [id])
+  authorId         String?
+  coursesSold      Int?
+  createdAt        DateTime  @default(now())
+  id               String    @id @default(cuid())
+  lastSaleDate     DateTime?
+  subscribersCount Int?
+  totalEarnings    Float?
+  updatedAt        DateTime  @updatedAt
 }
 
 enum EnumSubscriptionStatus {

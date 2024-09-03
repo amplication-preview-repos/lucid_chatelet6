@@ -14,6 +14,7 @@ import { PrismaService } from "../../prisma/prisma.service";
 import {
   Prisma,
   Author as PrismaAuthor,
+  Analytics as PrismaAnalytics,
   Course as PrismaCourse,
   Subscription as PrismaSubscription,
 } from "@prisma/client";
@@ -41,6 +42,17 @@ export class AuthorServiceBase {
   }
   async deleteAuthor(args: Prisma.AuthorDeleteArgs): Promise<PrismaAuthor> {
     return this.prisma.author.delete(args);
+  }
+
+  async findAnalyticsItems(
+    parentId: string,
+    args: Prisma.AnalyticsFindManyArgs
+  ): Promise<PrismaAnalytics[]> {
+    return this.prisma.author
+      .findUniqueOrThrow({
+        where: { id: parentId },
+      })
+      .analyticsItems(args);
   }
 
   async findCourses(

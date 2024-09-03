@@ -26,6 +26,9 @@ import { Author } from "./Author";
 import { AuthorFindManyArgs } from "./AuthorFindManyArgs";
 import { AuthorWhereUniqueInput } from "./AuthorWhereUniqueInput";
 import { AuthorUpdateInput } from "./AuthorUpdateInput";
+import { AnalyticsFindManyArgs } from "../../analytics/base/AnalyticsFindManyArgs";
+import { Analytics } from "../../analytics/base/Analytics";
+import { AnalyticsWhereUniqueInput } from "../../analytics/base/AnalyticsWhereUniqueInput";
 import { CourseFindManyArgs } from "../../course/base/CourseFindManyArgs";
 import { Course } from "../../course/base/Course";
 import { CourseWhereUniqueInput } from "../../course/base/CourseWhereUniqueInput";
@@ -59,6 +62,7 @@ export class AuthorControllerBase {
         createdAt: true,
         id: true,
         name: true,
+        subdomain: true,
         updatedAt: true,
       },
     });
@@ -85,6 +89,7 @@ export class AuthorControllerBase {
         createdAt: true,
         id: true,
         name: true,
+        subdomain: true,
         updatedAt: true,
       },
     });
@@ -112,6 +117,7 @@ export class AuthorControllerBase {
         createdAt: true,
         id: true,
         name: true,
+        subdomain: true,
         updatedAt: true,
       },
     });
@@ -148,6 +154,7 @@ export class AuthorControllerBase {
           createdAt: true,
           id: true,
           name: true,
+          subdomain: true,
           updatedAt: true,
         },
       });
@@ -183,6 +190,7 @@ export class AuthorControllerBase {
           createdAt: true,
           id: true,
           name: true,
+          subdomain: true,
           updatedAt: true,
         },
       });
@@ -194,6 +202,111 @@ export class AuthorControllerBase {
       }
       throw error;
     }
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get("/:id/analyticsItems")
+  @ApiNestedQuery(AnalyticsFindManyArgs)
+  @nestAccessControl.UseRoles({
+    resource: "Analytics",
+    action: "read",
+    possession: "any",
+  })
+  async findAnalyticsItems(
+    @common.Req() request: Request,
+    @common.Param() params: AuthorWhereUniqueInput
+  ): Promise<Analytics[]> {
+    const query = plainToClass(AnalyticsFindManyArgs, request.query);
+    const results = await this.service.findAnalyticsItems(params.id, {
+      ...query,
+      select: {
+        author: {
+          select: {
+            id: true,
+          },
+        },
+
+        coursesSold: true,
+        createdAt: true,
+        id: true,
+        lastSaleDate: true,
+        subscribersCount: true,
+        totalEarnings: true,
+        updatedAt: true,
+      },
+    });
+    if (results === null) {
+      throw new errors.NotFoundException(
+        `No resource was found for ${JSON.stringify(params)}`
+      );
+    }
+    return results;
+  }
+
+  @common.Post("/:id/analyticsItems")
+  @nestAccessControl.UseRoles({
+    resource: "Author",
+    action: "update",
+    possession: "any",
+  })
+  async connectAnalyticsItems(
+    @common.Param() params: AuthorWhereUniqueInput,
+    @common.Body() body: AnalyticsWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      analyticsItems: {
+        connect: body,
+      },
+    };
+    await this.service.updateAuthor({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Patch("/:id/analyticsItems")
+  @nestAccessControl.UseRoles({
+    resource: "Author",
+    action: "update",
+    possession: "any",
+  })
+  async updateAnalyticsItems(
+    @common.Param() params: AuthorWhereUniqueInput,
+    @common.Body() body: AnalyticsWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      analyticsItems: {
+        set: body,
+      },
+    };
+    await this.service.updateAuthor({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Delete("/:id/analyticsItems")
+  @nestAccessControl.UseRoles({
+    resource: "Author",
+    action: "update",
+    possession: "any",
+  })
+  async disconnectAnalyticsItems(
+    @common.Param() params: AuthorWhereUniqueInput,
+    @common.Body() body: AnalyticsWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      analyticsItems: {
+        disconnect: body,
+      },
+    };
+    await this.service.updateAuthor({
+      where: params,
+      data,
+      select: { id: true },
+    });
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
